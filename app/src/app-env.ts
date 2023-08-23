@@ -2,7 +2,7 @@
 /* eslint import/no-dynamic-require: 0 */
 import _ from 'underscore';
 import path from 'path';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer, webFrame } from 'electron';
 import { Emitter } from 'event-kit';
 import { mapSourcePosition } from 'source-map-support';
 import { localized, isRTL, initializeLocalization } from './intl';
@@ -438,6 +438,14 @@ export default class AppEnvConstructor {
   reload() {
     this.isReloading = true;
     return ipcRenderer.send('call-webcontents-method', 'reload');
+  }
+
+  zoomin() {
+	  webFrame.setZoomFactor(webFrame.getZoomFactor() + .1)
+  }
+
+  zoomout() {
+	  webFrame.setZoomFactor(webFrame.getZoomFactor() - .1)
   }
 
   // Public: The windowProps passed when creating the window via `newWindow`.

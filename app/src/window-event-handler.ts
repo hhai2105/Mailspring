@@ -100,6 +100,14 @@ export default class WindowEventHandler {
       AppEnv.reload();
     });
 
+    AppEnv.commands.add(document.body, 'window:zoomin', () => {
+      AppEnv.zoomin();
+    });
+
+    AppEnv.commands.add(document.body, 'window:zoomout', () => {
+      AppEnv.zoomout();
+    });
+
     AppEnv.commands.add(document.body, 'window:toggle-dev-tools', () => {
       AppEnv.toggleDevTools();
     });

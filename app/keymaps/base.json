@@ -43,6 +43,9 @@
   "window:select-account-7": "mod+8",
   "window:select-account-8": "mod+9",
 
+  "window:zoomin": "mod+=",
+  "window:zoomout": "mod+-",
+
   "window:sync-mail-now": "f5",
   "application:show-main-window": "mod+0",
   
